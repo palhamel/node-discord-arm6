@@ -1,3 +1,11 @@
+// dotenv setup:
+require('dotenv').config()
+console.log(require('dotenv').config())
+// -----------------------------------
+const token = process.env.TOKEN;
+console.log('the token i get:', token);
+// -----------------------------------
+
 // require the discord.js module
 const Discord = require("discord.js");
 
@@ -15,6 +23,6 @@ client.on('message', message => {
         message.channel.send('hello to you too.');
 	}
 });
-
 // Replace the value between the quotes with your token
-client.login('your-token-goes-here');
+client.login(token);
+// client.login('your-token-goes-here');

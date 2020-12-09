@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/palhamel/node-discord-arm6#readme",
   "dependencies": {
+    "discord.js": "^12.5.1",
     "dotenv": "^8.2.0"
   }
 }
