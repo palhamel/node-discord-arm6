@@ -1,4 +1,4 @@
-console.log("//..Checking setup..");
+console.log("//..Checking code..checking setup..");
 // dotenv setup:
 require("dotenv").config();
 // console.log(require('dotenv').config())
@@ -31,21 +31,37 @@ function randomNumber2(message) {
   message.channel.send(number.toString());
 }
 
+function messageFather (message) {
+  message.channel.send("Yes and I am your father");
+}
 
+function getCode(message) {
+  const max = 9999;
+  const min = 1000;
+  const code = Math.floor(Math.random() * (max - min)) + min;
+  message.channel.send(code.toString());
+}
+
+
+// -----------------------------------
 
 // commands - match incoming text with functions:
 let commands = new Map();
 commands.set("random", randomNumber);
 commands.set("random2", randomNumber2);
+commands.set("father", messageFather);
 
+commands.set("code", getCode);
 
+// -----------------------------------
 // process messages:
 client.on("message", (message) => {
   if (message.content[0] === "?") {
     const command = message.content.split(" ")[0].substr(1);
     if (commands.has(command)) {
-      // Check map if command exists
-      commands.get(command)(message); // Runs command
+      // Check map what command exists
+      commands.get(command)(message); 
+      // Runs command
     }
   }
 });
