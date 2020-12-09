@@ -19,16 +19,6 @@ client.once("ready", () => {
   console.log("//..Now I'm ready! - Bot running");
 });
 
-// functions:
-function randomNumber(message) {
-  const number = Math.floor(Math.random());
-  message.channel.send(number.toString());
-}
-
-// commands:
-
-
-
 client.on("message", (message) => {
   if (message.content === "?getcode") {
     const number = Math.floor(Math.random());
