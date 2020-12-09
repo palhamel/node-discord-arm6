@@ -1,4 +1,4 @@
-console.log('Checking setup..');
+console.log('//..Checking setup..');
 
 // dotenv setup:
 require("dotenv").config();
@@ -7,17 +7,16 @@ const token = process.env.TOKEN;
 // console.log("the token i get:", token);
 // -----------------------------------
 
-// require the discord.js module
+// require discord.js:
 const Discord = require("discord.js");
-
-// create the Discord client:
+// create client:
 const client = new Discord.Client();
 
-console.log('Connecting Bot, please wait..');
+console.log('//..Connecting Bot, please wait..');
 
-// when app is ready - write out:
+// when app is ready for use:
 client.once("ready", () => {
-  console.log("Now I'm ready!");
+  console.log("//..Now I'm ready! - Bot running");
 });
 
 client.on("message", (message) => {
@@ -26,6 +25,6 @@ client.on("message", (message) => {
     message.channel.send("Yes and I am your father");
   }
 });
-// Replace the value between the quotes with your token
+
+// Discord Bot token access via dotenv const:
 client.login(token);
-// client.login('your-token-goes-here');
