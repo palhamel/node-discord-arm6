@@ -10,7 +10,7 @@ const Discord = require("discord.js");
 // create client:
 const client = new Discord.Client();
 
-console.log("//..Connecting Bot, please wait..");
+console.log("//..Connecting Bot..please wait..");
 
 // when app is ready for use:
 client.once("ready", () => {
@@ -47,6 +47,23 @@ function getDate(message) {
   message.channel.send(date.toString());
 }
 
+function displayServer(message) {
+  message.channel.send(`This server's name is: ${message.guild.name}`);
+}
+// Create function - Getting Date and Time from Timestamp
+/*
+// current timestamp in milliseconds
+let ts = Date.now();
+
+let date_ob = new Date(ts);
+let date = date_ob.getDate();
+let month = date_ob.getMonth() + 1;
+let year = date_ob.getFullYear();
+
+// prints date & time in YYYY-MM-DD format
+console.log(year + "-" + month + "-" + date);
+*/
+
 // function help (message) {
 //   message.channel.send("```Available Commands:\n-help <Help list>\nping <test>\nweather <US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name> (e.g: weather Athens)\n```");
 // }
@@ -59,6 +76,7 @@ commands.set("random2", randomNumber2);
 commands.set("father", messageFather);
 commands.set("code", getCode);
 commands.set("date", getDate);
+commands.set("server", displayServer);
 
 
 // -----------------------------------
