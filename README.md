@@ -12,7 +12,7 @@ SMB needed so I setup a SAMBA server on the Pi and got it to work perfectly fine
 
 The Bot works great and I will keep working on it more to explore what can be made. I also need to see to what version I can update on this ARM processor. Discord.js really want a Node version >12, but right now I have a earlier and it's working great.
 
-Fun project to explore and to solve problems that pops up. :)
+Fun project to explore and to solve problems that pops up. 🙏🏻🌟
 
 #### Tech used:
 

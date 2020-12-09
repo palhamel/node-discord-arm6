@@ -1,4 +1,4 @@
-console.log('//..Checking setup..');
+console.log("//..Checking setup..");
 
 // dotenv setup:
 require("dotenv").config();
@@ -12,7 +12,7 @@ const Discord = require("discord.js");
 // create client:
 const client = new Discord.Client();
 
-console.log('//..Connecting Bot, please wait..');
+console.log("//..Connecting Bot, please wait..");
 
 // when app is ready for use:
 client.once("ready", () => {
@@ -20,11 +20,22 @@ client.once("ready", () => {
 });
 
 client.on("message", (message) => {
-  if (message.content === "!Are you there?") {
-    // send back "Pong." to the channel the message was sent in
-    message.channel.send("Yes and I am your father");
+  if (message.content === "?getcode") {
+    const number = Math.floor(Math.random());
+    message.channel.send(number.toString());
   }
 });
 
 // Discord Bot token access via dotenv const:
 client.login(token);
+
+/*
+
+client.on("message", (message) => {
+  if (message.content === "Are you there?") {
+    // send back "Pong." to the channel the message was sent in
+    message.channel.send("Yes and I am your father");
+  }
+});
+
+*/
