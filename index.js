@@ -14,12 +14,12 @@ console.log("//..Connecting Bot, please wait..");
 
 // when app is ready for use:
 client.once("ready", () => {
-  console.log("//..Now I'm ready! - Bot running");
+  console.log("//..Now I'm ready! - Bot running 🤖");
 });
 // Discord Bot token access via dotenv const:
 client.login(token);
-// -----------------------------------
 
+// -----------------------------------
 // functions:
 function randomNumber(message) {
   const number = Math.random();
@@ -31,7 +31,7 @@ function randomNumber2(message) {
   message.channel.send(number.toString());
 }
 
-function messageFather (message) {
+function messageFather(message) {
   message.channel.send("Yes and I am your father");
 }
 
@@ -42,38 +42,48 @@ function getCode(message) {
   message.channel.send(code.toString());
 }
 
+function getDate(message) {
+  const date = new Date();
+  message.channel.send(date.toString());
+}
+
+// function help (message) {
+//   message.channel.send("```Available Commands:\n-help <Help list>\nping <test>\nweather <US Zipcode, UK Postcode, Canada Postalcode, IP address, Latitude/Longitude (decimal degree) or city name> (e.g: weather Athens)\n```");
+// }
 
 // -----------------------------------
-
 // commands - match incoming text with functions:
 let commands = new Map();
 commands.set("random", randomNumber);
 commands.set("random2", randomNumber2);
 commands.set("father", messageFather);
-
 commands.set("code", getCode);
+commands.set("date", getDate);
+
 
 // -----------------------------------
-// process messages:
+// process listening and acting to incoming messages:
 client.on("message", (message) => {
   if (message.content[0] === "?") {
     const command = message.content.split(" ")[0].substr(1);
     if (commands.has(command)) {
       // Check map what command exists
-      commands.get(command)(message); 
+      commands.get(command)(message);
       // Runs command
     }
   }
 });
 
 
+
+
+// -----------------------------------
 /*
 
-client.on("message", (message) => {
-  if (message.content === "Are you there?") {
-    // send back "Pong." to the channel the message was sent in
-    message.channel.send("Yes and I am your father");
-  }
-});
+TODO:
+
+- add --help reply
+- add if no word matches
+- cleanup index file and put function and commands in their own files.
 
 */
