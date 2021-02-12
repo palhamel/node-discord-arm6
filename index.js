@@ -14,7 +14,7 @@ console.log("//..Connecting Bot..please wait..");
 
 // when app is ready for use:
 client.once("ready", () => {
-  console.log("//..Now I'm ready! - Bot running 🤖");
+  console.log("//..Now I'm ready! - Bot running 🤖 ✅");
 });
 // Discord Bot token access via dotenv const:
 client.login(token);
@@ -100,6 +100,7 @@ client.on("message", (message) => {
 
 TODO:
 
+- REST API functions
 - add --help reply
 - add if no word matches
 - cleanup index file and put function and commands in their own files.
